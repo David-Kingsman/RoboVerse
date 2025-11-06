@@ -542,7 +542,7 @@ class DPRunner(BaseRunner):
                 "No checkpoint found, please provide a valid checkpoint path."
             )
         args.checkpoint_path = checkpoint
-        ckpt_name = args.checkpoint_path.split("/")[-1] + "_" + time_str
+        ckpt_name = args.checkpoint_path.name + "_" + time_str
         ckpt_name = f"{args.task}/{args.algo}/{args.robot}/{ckpt_name}"
         runnerCls = get_runner(args.algo)
         policyRunner: BaseEvalRunner = runnerCls(
